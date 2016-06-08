@@ -31,4 +31,14 @@ class SimplewebSaaSExtension extends Extension
         $loader->load('event_listeners.yml');
         $loader->load('managers.yml');
     }
+
+    /**
+     * Returns the namespace
+     *
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return 'simpleweb_saas';
+    }
 }

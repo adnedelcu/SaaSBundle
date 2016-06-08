@@ -3,7 +3,7 @@ services:
         class: %simpleweb.saas.subscription.manager.class%
         arguments:
             - %simpleweb.saas.subscription.class%
-            - @event_dispatcher
+            - "@event_dispatcher"
 
 parameters:
     simpleweb.saas.subscription.manager.class: Simpleweb\SaaSBundle\Manager\SubscriptionManager

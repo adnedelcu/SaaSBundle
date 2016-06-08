@@ -4,14 +4,14 @@ services:
         arguments:
             - "%fos_user.model.user.class%"
             - "%simpleweb.saas.plan.class%"
-            - @session
+            - "@session"
         tags:
             - { name: form.type, alias: simpleweb_saas_user_registration }
 
     simpleweb.saas.form.type.referrer:
         class: %simpleweb.saas.form.type.referrer.class%
         arguments:
-            - @fos_user.user_manager
+            - "@fos_user.user_manager"
         tags:
             - { name: form.type, alias: simpleweb_saas_referrer }
 

@@ -2,10 +2,13 @@
 
 namespace Simpleweb\SaaSBundle\Form\Type;
 
-use FOS\UserBundle\Model\UserManagerInterface,
-    Symfony\Component\Form,
-    Symfony\Component\OptionsResolver\OptionsResolverInterface,
-    Simpleweb\SaaSBundle\Form\DataTransformer\ReferrerTransformer;
+use FOS\UserBundle\Model\UserManagerInterface;
+
+use Symfony\Component\Form;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
+use Simpleweb\SaaSBundle\Form\DataTransformer\ReferrerTransformer;
 
 class ReferrerFormType extends Form\AbstractType
 {
@@ -33,7 +36,7 @@ class ReferrerFormType extends Form\AbstractType
 
     public function getParent()
     {
-        return 'hidden';
+        return HiddenType::class;
     }
 
     public function getName()

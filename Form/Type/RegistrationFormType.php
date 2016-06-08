@@ -2,8 +2,10 @@
 
 namespace Simpleweb\SaaSBundle\Form\Type;
 
-use FOS\UserBundle\Form\Type\RegistrationFormType as BaseRegistrationFormType,
-    Symfony\Component\Form;
+use FOS\UserBundle\Form\Type\RegistrationFormType as BaseRegistrationFormType;
+
+use Symfony\Component\Form;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class RegistrationFormType extends BaseRegistrationFormType
 {
@@ -24,12 +26,12 @@ class RegistrationFormType extends BaseRegistrationFormType
         parent::buildForm($builder, $options);
 
         $builder
-            ->add('plan', 'entity', [
+            ->add('plan', EntityType::class, [
                 'class' => $this->plan_class,
                 'expanded' => true,
                 'mapped' => false
             ])
-            ->add('referrer', 'simpleweb_saas_referrer')
+            ->add('referrer', ReferrerFormType::class)
         ;
 
         $builder->addEventListener(Form\FormEvents::POST_SET_DATA, function (Form\FormEvent $event) {

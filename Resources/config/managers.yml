@@ -2,7 +2,7 @@ services:
     simpleweb.saas.subscription.manager:
         class: %simpleweb.saas.subscription.manager.class%
         arguments:
-            - %simpleweb.saas.subscription.class%
+            - %simple_saas.subscription.class%
             - "@event_dispatcher"
 
 parameters:

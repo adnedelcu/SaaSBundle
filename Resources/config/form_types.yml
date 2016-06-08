@@ -2,8 +2,8 @@ services:
     simpleweb.saas.form.type.registration:
         class: %simpleweb.saas.form.type.registration.class%
         arguments:
-            - "%fos_user.model.user.class%"
-            - "%simpleweb.saas.plan.class%"
+            - "%simple_saas.user.class%"
+            - "%simple_saas.plan.class%"
             - "@session"
         tags:
             - { name: form.type, alias: simpleweb_saas_user_registration }

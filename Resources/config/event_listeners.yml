@@ -2,13 +2,13 @@ services:
     simpleweb.saas.registration_listener:
         class: Simpleweb\SaaSBundle\EventListener\RegistrationListener
         arguments:
-            - @simpleweb.saas.subscription.manager
+            - "@simpleweb.saas.subscription.manager"
         tags:
             - { name: kernel.event_subscriber }
 
     simpleweb.saas.referrer_listener:
         class: Simpleweb\SaaSBundle\EventListener\ReferrerListener
         arguments:
-            - @session
+            - "@session"
         tags:
             - { name: kernel.event_subscriber }
